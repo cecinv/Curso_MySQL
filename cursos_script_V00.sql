@@ -86,3 +86,49 @@ order by ano;
 select nome, carga, totalaulas from cursos
 where carga > 35 and totalaulas <= 30;
 
+select * from cursos
+where nome like 'P%';
+
+select * from cursos
+where nome like '%a';
+
+insert into cursos values
+('8', 'PáOO', 'Teste de acento', '60', '35', '2016');
+select * from cursos;
+
+select * from cursos
+where nome like '%a%';
+
+select * from cursos
+where nome not like 'PH%P';  # php e photoshop ficam de fora
+
+insert into cursos values
+('10', 'PHP4', 'Curso de PHP, versão 4.0', '30', '11', '2010'),
+('11', 'PHP7', 'Curso de PHP, versão 7.0', '40', '20', '2020');
+
+select * from cursos
+where nome like 'ph%p%';
+
+select * from cursos
+where nome like 'ph%p_';
+
+select distinct carga from cursos
+order by carga;
+
+select count(nome) from cursos;
+
+select count(*) from cursos where carga > 30;
+
+select max(carga) from cursos;
+
+select max(totalaulas) from cursos where ano = '2016';
+
+select nome, min(totalaulas) from cursos where ano = '2016';
+
+select sum(totalaulas) from cursos;
+
+select sum(totalaulas) from cursos where ano = '2016';
+
+select avg(totalaulas) from cursos;
+
+select avg(totalaulas) from cursos where ano = '2016';
