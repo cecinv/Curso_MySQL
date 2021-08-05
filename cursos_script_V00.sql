@@ -132,3 +132,22 @@ select sum(totalaulas) from cursos where ano = '2016';
 select avg(totalaulas) from cursos;
 
 select avg(totalaulas) from cursos where ano = '2016';
+
+select carga, count(nome) from cursos
+group by carga
+order by carga;
+
+select carga, count(*) from cursos
+group by carga
+having count(*) >= 2;
+
+select ano, count(*) from cursos
+where totalaulas >= 30
+group by ano
+having ano > 2013
+order by count(*) desc;
+
+select carga, count(*) from cursos
+where ano > 2013
+group by carga
+having carga > (select avg(carga) from cursos);
